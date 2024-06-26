@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Поиск отелей</title>
+    <style>
+        
+    </style>
+</head>
+<body>
+    <div class="search-container">
+        <h1>Поиск отелей</h1>
+        <form>
+            <div class="form-group">
+                <label for="location">Местоположение:</label>
+                <input type="text" id="location" name="location" placeholder="Город, регион или отель" required>
+            </div>
+            <div class="form-group">
+                <label for="guests">Количество гостей:</label>
+                <div class="inline">
+                    <input type="number" id="adults" name="adults" placeholder="Взрослые" min="1" required>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="rooms">Количество номеров:</label>
+                <input type="number" id="rooms" name="rooms" placeholder="Номера" min="1" required>
+            </div>
+            <div class="form-group">
+                <label>Уровень комфорта:</label>
+                <select name="comfort">
+                    <option value="1">1 звезда</option>
+                    <option value="2">2 звезды</option>
+                    <option value="3">3 звезды</option>
+                    <option value="4">4 звезды</option>
+                    <option value="5">5 звезд</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>Удобства:</label>
+                <div>
+                    <label><input type="checkbox" name="amenities" value="wifi"> Бесплатный Wi-Fi</label>
+                    <label><input type="checkbox" name="amenities" value="breakfast"> Завтрак включен</label>
+                    <label><input type="checkbox" name="amenities" value="parking"> Парковка</label>
+                    <label><input type="checkbox" name="amenities" value="pool"> Бассейн</label>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="price_range">Ценовой диапазон (руб):</label>
+                <div class="inline">
+                    <input type="number" id="price_min" name="price_min" placeholder="От" min="0">
+                </div>
+                <div class="inline">
+                    <input type="number" id="price_max" name="price_max" placeholder="До" min="0">
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <label>Сортировать по:</label>
+                <select name="sort_by">
+                    <option value="recommended">Рекомендованные</option>
+                    <option value="price_low_high">Цена (от низкой к высокой)</option>
+                    <option value="price_high_low">Цена (от высокой к низкой)</option>
+                </select>
+            </div>
+            <div class="form-actions">
+                <button type="submit">Найти отели</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

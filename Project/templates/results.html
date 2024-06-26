@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Результаты поиска</title>
+    <style>
+        /* Ваши стили */
+    </style>
+</head>
+<body>
+    <div class="results-container">
+        <h1>Результаты поиска</h1>
+        <ul>
+            {% for hotel in results %}
+                <li>
+                    <a href="{{hotel.HotelWebsiteUrl}}">{{ hotel.HotelName }}</a>
+                    <p>Местоположение: {{ hotel.cityName }}</p>
+                    <button> Rezerwacja </button>
+                    <img src={{ hotel.Images.img_1 }} alt="">
+                    <img src={{ hotel.Images.img_2 }} alt="">
+                    <!-- Другие детали отеля -->
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+</body>
+</html>

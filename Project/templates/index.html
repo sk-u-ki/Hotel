@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wyszukanie hoteli</title>
+    <link rel="stylesheet" href="static/style.css">
+</head>
+<body>
+    <div class="search-container">
+        <h1>Wyszukanie hoteli</h1>
+        <form action="/search" method="POST">
+            <div class="form-group">
+                <label for="location">Lokacja:</label>
+                <input type="text" id="location" name="location" placeholder="Miasto, region lub hotel" required>
+            </div>
+            <div class="form-group">
+                <label for="guests">Liczba gości:</label>
+                <div class="inline">
+                    <input type="number" id="adults" name="adults" placeholder="Dorośli" min="1" required>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="rooms">Ilość pokoi:</label>
+                <input type="number" id="rooms" name="rooms" placeholder="Pokoje" min="1" required>
+            </div>
+            <div class="form-group">
+                <label>Poziom komfortu:</label>
+                <select name="comfort">
+                    <option value="1">1 gwiazdka</option>
+                    <option value="2">2 gwiazdy</option>
+                    <option value="ThreeStar">3 gwiazdy</option>
+                    <option value="FourStar">4 gwiazdy</option>
+                    <option value="5">5 gwiazd</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>Udogodnienia:</label>
+                <div>
+                    <label><input type="checkbox" name="amenities" value="wifi"> Free Wi-Fi</label>
+                    <label><input type="checkbox" name="amenities_2" value="breakfast"> Śniadanie w cenie</label>
+                    <label><input type="checkbox" name="amenities" value="parking"> Parking</label>
+                    <label><input type="checkbox" name="amenities" value="balkon"> Balkon</label>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="price_range">Cena:</label>
+                <div class="inline">
+                    <input type="number" id="price_min" name="price_min" placeholder="От" min="0">
+                </div>
+                <div class="inline">
+                    <input type="number" id="price_max" name="price_max" placeholder="До" min="0">
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <label>Sortować:</label>
+                <select name="sort_by">
+                    <option value="recommended">Ranking</option>
+                    <option value="price_low_high">Cena (malejąco)</option>
+                    <option value="price_high_low">Cena (rosnąco)</option>
+                </select>
+            </div>
+            <div class="form-actions">
+                <button type="submit">Szukaj</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
