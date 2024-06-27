@@ -56,14 +56,14 @@ def search():
     # rooms = int(request.form['rooms'])
     comfort = request.form['comfort']
     stars = convert_stars(comfort)
-    #filtr_by_amenities(amenities)
+    filtr_by_amenities(amenities)
     #print(parking,wifi,breakfast)
     query = {
         "countyName": location,
-        "HotelRating": comfort
-        # "Parking":{"$gte": parking},
-        # "FreeWIFI":{"$gte": wifi},
-        # "Breakfast":breakfast
+        "HotelRating": comfort,
+        "Parking":{"$gte": parking},
+        "FreeWIFI":{"$gte": wifi},
+        "Breakfast":{"$gte":breakfast}
     }
     
     results = collection.find(query)
